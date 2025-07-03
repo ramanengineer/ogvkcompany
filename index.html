@@ -44,7 +44,7 @@
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       font-weight: 400;
       margin: 0;
-      padding: 2rem;
+      padding: 1rem;
       min-height: 100vh;
       line-height: 1.5;
     }
@@ -59,8 +59,8 @@
       background: var(--secondary-bg);
       border: 1px solid #4b5563;
       border-radius: 1rem;
-      padding: 2.5rem;
-      margin-bottom: 2rem;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
       box-shadow: var(--shadow);
       transition: transform 0.3s ease;
     }
@@ -85,39 +85,39 @@
 
     h1 {
       color: var(--accent);
-      font-size: clamp(2.5rem, 5vw, 3.75rem);
+      font-size: clamp(2rem, 5vw, 3rem);
       font-weight: 700;
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
     }
 
     h2 {
       color: var(--accent);
-      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-size: clamp(1.25rem, 3vw, 1.75rem);
       font-weight: 600;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
     }
 
     nav {
       display: flex;
       justify-content: center;
-      gap: 1.5rem;
-      margin-bottom: 2.5rem;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
       flex-wrap: wrap;
     }
 
     nav button {
       background: var(--btn-light-bg);
       border: none;
-      border-radius: 0.75rem;
-      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      padding: 0.5rem 1rem;
       color: var(--btn-light-text);
-      font-size: clamp(0.875rem, 2vw, 1rem);
+      font-size: clamp(0.75rem, 2vw, 0.875rem);
       font-weight: 500;
       cursor: pointer;
       transition: background 0.3s ease, box-shadow 0.3s ease;
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.25rem;
     }
 
     nav button.active {
@@ -132,14 +132,14 @@
 
     .streamer-grid, .staff-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
     }
 
     .card {
       background: var(--card-bg);
-      padding: 1.5rem;
+      padding: 1rem;
       border-radius: 0.75rem;
       text-align: left;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -153,15 +153,15 @@
 
     .card h3 {
       color: var(--accent);
-      font-size: 1.25rem;
+      font-size: 1.125rem;
       font-weight: 600;
-      margin-bottom: 1rem;
+      margin-bottom: 0.75rem;
     }
 
     .card p {
-      font-size: 0.875rem;
+      font-size: 0.8125rem;
       color: #d1d5db;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.5rem;
     }
 
     .card p strong {
@@ -172,12 +172,12 @@
     .card a {
       color: var(--btn-light-text);
       text-decoration: none;
-      padding: 0.75rem 1.25rem;
+      padding: 0.5rem 1rem;
       background: var(--btn-light-bg);
       border-radius: 0.5rem;
       display: inline-block;
-      margin-top: 1rem;
-      font-size: 0.875rem;
+      margin-top: 0.75rem;
+      font-size: 0.8125rem;
       font-weight: 500;
       transition: background 0.3s ease;
     }
@@ -187,40 +187,42 @@
     }
 
     .live-status {
-      margin: 1.5rem 0;
-      font-size: 0.875rem;
+      margin: 1rem 0;
+      font-size: 0.8125rem;
       color: #d1d5db;
     }
 
     .form-container {
-      padding: 1.5rem;
+      padding: 1rem;
       background: var(--card-bg);
       border-radius: 0.75rem;
-      margin: 1.5rem 0;
+      margin: 1rem 0;
+      width: 100%;
+      overflow: hidden;
     }
 
     .form-container iframe {
       width: 100%;
-      max-width: 640px;
-      height: 416px;
+      height: 450px;
+      border: none;
     }
 
     .about-text {
-      line-height: 1.75;
+      line-height: 1.6;
       text-align: justify;
       max-width: 900px;
       margin: 0 auto;
-      font-size: 1rem;
+      font-size: 0.875rem;
       color: #d1d5db;
     }
 
     .nes-btn {
       background: var(--btn-light-bg);
       border: none;
-      border-radius: 0.75rem;
+      border-radius: 0.5rem;
       color: var(--btn-light-text);
-      padding: 0.75rem 1.5rem;
-      font-size: 0.875rem;
+      padding: 0.5rem 1rem;
+      font-size: 0.8125rem;
       font-weight: 500;
       cursor: pointer;
       transition: background 0.3s ease, box-shadow 0.3s ease;
@@ -244,28 +246,34 @@
 
     footer {
       text-align: center;
-      margin-top: 3rem;
+      margin-top: 2rem;
       color: #d1d5db;
-      font-size: 0.875rem;
+      font-size: 0.75rem;
     }
 
     @media (max-width: 768px) {
-      body { padding: 1.5rem; }
-      .container { padding: 1rem; }
-      .nes-container { padding: 1.5rem; }
+      body { padding: 1rem; }
+      .container { padding: 0.5rem; }
+      .nes-container { padding: 1rem; }
       .streamer-grid, .staff-grid { grid-template-columns: 1fr; }
-      nav { gap: 1rem; }
-      nav button { padding: 0.625rem 1.25rem; }
-      h1 { font-size: clamp(2rem, 4.5vw, 3rem); }
-      h2 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
+      nav { gap: 0.5rem; }
+      nav button { padding: 0.4rem 0.8rem; font-size: 0.75rem; }
+      h1 { font-size: clamp(1.75rem, 4.5vw, 2.5rem); }
+      h2 { font-size: clamp(1rem, 2.5vw, 1.5rem); }
       .form-container iframe { height: 400px; }
     }
 
     @media (max-width: 480px) {
-      body { padding: 1rem; }
-      .nes-container { padding: 1rem; }
-      nav button { font-size: 0.875rem; }
+      body { padding: 0.5rem; }
+      .nes-container { padding: 0.75rem; }
+      nav button { font-size: 0.7rem; padding: 0.3rem 0.6rem; }
       .form-container iframe { height: 350px; }
+      .card { padding: 0.75rem; }
+      .card h3 { font-size: 1rem; }
+      .card p { font-size: 0.75rem; }
+      .card a { font-size: 0.75rem; }
+      .about-text { font-size: 0.8125rem; }
+      .live-status { font-size: 0.75rem; }
     }
   </style>
 </head>
@@ -293,9 +301,9 @@
     <div id="sponsor" class="page nes-container">
       <h2>Sponsorship Opportunities</h2>
       <div class="form-container">
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc7GEJ6i9njtN38ffkOyEzAGAT40lJwV26a3bHundUuRBlxAw/viewform?embedded=true" width="100%" height="416" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc7GEJ6i9njtN38ffkOyEzAGAT40lJwV26a3bHundUuRBlxAw/viewform?embedded=true" width="100%" height="450" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
       </div>
-      <p class="nes-btn" style="margin-top: 1.5rem;">Contact: <a href="mailto:sponsor@ogvk.org" style="color: var(--accent);">sponsor@ogvk.org</a></p>
+      <p class="nes-btn" style="margin-top: 1rem;">Contact: <a href="mailto:sponsor@ogvk.org" style="color: var(--accent);">sponsor@ogvk.org</a></p>
     </div>
 
     <!-- Join Page -->
@@ -305,15 +313,15 @@
         <p>ogvk.org is open to everyone! Our join process is simple: fill out the form below, and if selected, you're in! No fees, no commitments—just a chance to be part of our mega Twitch community. We welcome streamers and viewers of all backgrounds to contribute to our free-for-all vibe.</p>
       </div>
       <div class="form-container">
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdHJghIOEJCenD6YTDbYzLQXeMlwYM1NU6JYKV8cFS5f_rs9w/viewform?embedded=true" width="100%" height="419" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdHJghIOEJCenD6YTDbYzLQXeMlwYM1NU6JYKV8cFS5f_rs9w/viewform?embedded=true" width="100%" height="450" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
       </div>
-      <p class="nes-btn" style="margin-top: 1.5rem;">Contact: <a href="mailto:join@ogvk.org" style="color: var(--accent);">join@ogvk.org</a></p>
+      <p class="nes-btn" style="margin-top: 1rem;">Contact: <a href="mailto:join@ogvk.org" style="color: var(--accent);">join@ogvk.org</a></p>
     </div>
 
     <!-- Streamers Page -->
     <div id="streamers" class="page nes-container">
       <h2>Streamer Profiles</h2>
-      <div class="live-status" id="live-status">Current Time: 08:39 AM NZST, Friday, July 04, 2025</div>
+      <div class="live-status" id="live-status">Current Time: 08:53 AM NZST, Friday, July 04, 2025</div>
       <div class="streamer-grid">
         <div class="card">
           <h3>xwlasxd</h3>
