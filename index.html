@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ogvk.org - A public Twitch organization open to all via a simple join process. Join our mega community of streamers!">
+  <meta name="keywords" content="ogvk, twitch, streaming, join, community, free, streamers">
+  <meta name="author" content="ogvk.org">
+  <meta property="og:title" content="ogvk.org - Public Twitch Community">
+  <meta property="og:description" content="ogvk.org is a free-for-all Twitch community where anyone can join through our easy selection process.">
+  <meta property="og:image" content="https://i.postimg.cc/zfSxRGYF/Binge-Watchers-prfile-png-1.png">
+  <meta property="og:url" content="https://ogvk.org">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>ogvk.org</title>
+  <link rel="icon" href="https://i.postimg.cc/zfSxRGYF/Binge-Watchers-prfile-png-1.png" type="image/png">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-bg: #1f2937;
+      --secondary-bg: #374151;
+      --accent: #e11d48;
+      --text: #f3f4f6;
+      --btn-light-bg: #4b5563;
+      --btn-light-text: #f3f4f6;
+      --btn-dark-bg: #6b7280;
+      --btn-dark-text: #ffffff;
+      --active-tab-bg: #d1d5db;
+      --active-tab-text: #1f2937;
+      --card-bg: #2d3748;
+      --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--primary-bg);
+      color: var(--text);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-weight: 400;
+      margin: 0;
+      padding: 2rem;
+      min-height: 100vh;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .nes-container {
+      background: var(--secondary-bg);
+      border: 1px solid #4b5563;
+      border-radius: 1rem;
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s ease;
+    }
+
+    .nes-container:hover {
+      transform: translateY(-0.25rem);
+    }
+
+    .page {
+      display: none;
+    }
+
+    .page.active {
+      display: block;
+      animation: fadeIn 0.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(1rem); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      color: var(--accent);
+      font-size: clamp(2.5rem, 5vw, 3.75rem);
+      font-weight: 700;
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      color: var(--accent);
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    nav button {
+      background: var(--btn-light-bg);
+      border: none;
+      border-radius: 0.75rem;
+      padding: 0.75rem 1.5rem;
+      color: var(--btn-light-text);
+      font-size: clamp(0.875rem, 2vw, 1rem);
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    nav button.active {
+      background: var(--active-tab-bg);
+      color: var(--active-tab-text);
+    }
+
+    nav button:hover {
+      background: var(--btn-dark-bg);
+      box-shadow: 0 0 10px rgba(209, 213, 219, 0.5);
+    }
+
+    .streamer-grid, .staff-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      padding: 1.5rem;
+      border-radius: 0.75rem;
+      text-align: left;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: var(--shadow);
+    }
+
+    .card:hover {
+      transform: translateY(-0.125rem);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .card h3 {
+      color: var(--accent);
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .card p {
+      font-size: 0.875rem;
+      color: #d1d5db;
+      margin-bottom: 0.75rem;
+    }
+
+    .card p strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .card a {
+      color: #fff;
+      text-decoration: none;
+      padding: 0.75rem 1.25rem;
+      background: var(--btn-light-bg);
+      border-radius: 0.5rem;
+      display: inline-block;
+      margin-top: 1rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: background 0.3s ease;
+    }
+
+    .card a:hover {
+      background: var(--btn-dark-bg);
+    }
+
+    .live-status {
+      margin: 1.5rem 0;
+      font-size: 0.875rem;
+      color: #9ca3af;
+    }
+
+    .form-container {
+      padding: 1.5rem;
+      background: var(--card-bg);
+      border-radius: 0.75rem;
+      margin: 1.5rem 0;
+    }
+
+    .about-text {
+      line-height: 1.75;
+      text-align: justify;
+      max-width: 900px;
+      margin: 0 auto;
+      font-size: 1rem;
+      color: #d1d5db;
+    }
+
+    .nes-btn {
+      background: var(--btn-light-bg);
+      border: none;
+      border-radius: 0.75rem;
+      color: var(--btn-light-text);
+      padding: 0.75rem 1.5rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+      display: inline-block;
+    }
+
+    .nes-btn:hover {
+      background: var(--btn-dark-bg);
+      box-shadow: 0 0 10px rgba(209, 213, 219, 0.5);
+    }
+
+    .nes-btn.twitch {
+      background: #9146ff;
+      color: #fff;
+    }
+
+    .nes-btn.twitch:hover {
+      background: #7f3ce6;
+      box-shadow: 0 0 10px rgba(145, 70, 255, 0.7);
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      color: #9ca3af;
+      font-size: 0.875rem;
+    }
+
+    @media (max-width: 768px) {
+      body { padding: 1.5rem; }
+      .container { padding: 1rem; }
+      .nes-container { padding: 1.5rem; }
+      .streamer-grid, .staff-grid { grid-template-columns: 1fr; }
+      nav { gap: 1rem; }
+      nav button { padding: 0.625rem 1.25rem; }
+      h1 { font-size: clamp(2rem, 4.5vw, 3rem); }
+      h2 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
+    }
+
+    @media (max-width: 480px) {
+      body { padding: 1rem; }
+      .nes-container { padding: 1rem; }
+      nav button { font-size: 0.875rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>ogvk.org</h1>
+    <nav>
+      <button id="nav-about" onclick="showPage('about')" class="active"><i class="fas fa-info-circle"></i>About</button>
+      <button id="nav-sponsor" onclick="showPage('sponsor')"><i class="fas fa-hand-holding-usd"></i>Sponsor</button>
+      <button id="nav-join" onclick="showPage('join')"><i class="fas fa-users"></i>Join</button>
+      <button id="nav-streamers" onclick="showPage('streamers')"><i class="fas fa-video"></i>Streamers</button>
+      <button id="nav-staff" onclick="showPage('staff')"><i class="fas fa-user-tie"></i>Staff</button>
+    </nav>
+
+    <!-- About Page -->
+    <div id="about" class="page nes-container active">
+      <h2>About ogvk.org</h2>
+      <div class="about-text">
+        <p>ogvk.org is a public Twitch organization open to everyone! Launched as a mega community free for all, anyone can join through our simple selection process with no strings attached. Based in New Zealand (NZST/NZDT), we offer 24/7 live streaming with talents like xwlasxd and xvbrznem, fostering a vibrant, inclusive environment for streamers and viewers alike.</p>
+        <p>Our mission is to create a welcoming space for all Twitch enthusiasts. Whether you're a streamer, viewer, or supporter, ogvk.org is your home. Join our community on <a href="https://discord.gg/ymwPhfz2" style="color: var(--accent);">Discord</a> and explore the opportunities below!</p>
+      </div>
+    </div>
+
+    <!-- Sponsor Page -->
+    <div id="sponsor" class="page nes-container">
+      <h2>Sponsorship Opportunities</h2>
+      <div class="form-container">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf9dQwX7Z5Z6X3kY8Y2kL9m4m4m4m4m4m4m4m4m4/viewform?embedded=true" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+      </div>
+      <p class="nes-btn" style="margin-top: 1.5rem;">Contact: <a href="mailto:sponsor@ogvk.org" style="color: var(--accent);">sponsor@ogvk.org</a></p>
+    </div>
+
+    <!-- Join Page -->
+    <div id="join" class="page nes-container">
+      <h2>Join ogvk.org</h2>
+      <div class="about-text">
+        <p>ogvk.org is open to everyone! Our join process is simple: fill out the form below, and if selected, you're in! No fees, no commitments—just a chance to be part of our mega Twitch community. We welcome streamers and viewers of all backgrounds to contribute to our free-for-all vibe.</p>
+      </div>
+      <div class="form-container">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf9dQwX7Z5Z6X3kY8Y2kL9m4m4m4m4m4m4m4m4m4/viewform?embedded=true" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+      </div>
+      <p class="nes-btn" style="margin-top: 1.5rem;">Contact: <a href="mailto:join@ogvk.org" style="color: var(--accent);">join@ogvk.org</a></p>
+    </div>
+
+    <!-- Streamers Page -->
+    <div id="streamers" class="page nes-container">
+      <h2>Streamer Profiles</h2>
+      <div class="live-status" id="live-status">Current Time: 07:57 AM NZST, Friday, July 04, 2025</div>
+      <div class="streamer-grid">
+        <div class="card">
+          <h3>xwlasxd</h3>
+          <p><strong>Age:</strong> 28</p>
+          <p><strong>Background:</strong> Grew up gaming in rural NZ, turned pro after college.</p>
+          <p><strong>Marital Status:</strong> Single</p>
+          <p><strong>Wives:</strong> 0</p>
+          <p><strong>Story:</strong> Started streaming to escape farm life, now a gaming icon.</p>
+          <p><strong>Other:</strong> Loves hiking.</p>
+          <a href="https://twitch.tv/xwlasxd" target="_blank" class="nes-btn twitch">Watch Live</a>
+        </div>
+        <div class="card">
+          <h3>HeavySamLifts</h3>
+          <p><strong>Age:</strong> 32</p>
+          <p><strong>Background:</strong> Ex-powerlifter turned streamer.</p>
+          <p><strong>Marital Status:</strong> Married</p>
+          <p><strong>Wives:</strong> 1</p>
+          <p><strong>Story:</strong> Transitioned from gym to Twitch, now blends fitness with gaming.</p>
+          <p><strong>Other:</strong> Owns a gym.</p>
+          <a href="https://twitch.tv/HeavySamLifts" target="_blank" class="nes-btn twitch">Watch Live</a>
+        </div>
+        <div class="card">
+          <h3>ShadyPeterLive</h3>
+          <p><strong>Age:</strong> 25</p>
+          <p><strong>Background:</strong> Urban DJ with a streaming twist.</p>
+          <p><strong>Marital Status:</strong> Single</p>
+          <p><strong>Wives:</strong> 0</p>
+          <p><strong>Story:</strong> Left music for Twitch, now a variety star.</p>
+          <p><strong>Other:</strong> Collects vinyl.</p>
+          <a href="https://twitch.tv/ShadyPeterLive" target="_blank" class="nes-btn twitch">Watch Live</a>
+        </div>
+        <div class="card">
+          <h3>ramkrishanghoil</h3>
+          <p><strong>Age:</strong> 30</p>
+          <p><strong>Background:</strong> Art student turned streamer.</p>
+          <p><strong>Marital Status:</strong> Single</p>
+          <p><strong>Wives:</strong> 0</p>
+          <p><strong>Story:</strong> Uses art to inspire gaming streams.</p>
+          <p><strong>Other:</strong> Paints live.</p>
+          <a href="https://twitch.tv/ramkrishanghoil" target="_blank" class="nes-btn twitch">Watch Live</a>
+        </div>
+        <div class="card">
+          <h3>zxckjsdv</h3>
+          <p><strong>Age:</strong> 22</p>
+          <p><strong>Background:</strong> High school dropout, self-taught coder.</p>
+          <p><strong>Marital Status:</strong> Single</p>
+          <p><strong>Wives:</strong> 0</p>
+          <p><strong>Story:</strong> Built a following with coding streams.</p>
+          <p><strong>Other:</strong> Tech enthusiast.</p>
+          <a href="https://twitch.tv/zxckjsdv" target="_blank" class="nes-btn twitch">Watch Live</a>
+        </div>
+        <div class="card">
+          <h3>brbcompiling</h3>
+          <p><strong>Age:</strong> 27</p>
+          <p><strong>Background:</strong> Software engineer by day.</p>
+          <p><strong>Marital Status:</strong> Married</p>
+          <p><strong>Wives:</strong> 1</p>
+          <p><strong>Story:</strong> Streams coding projects live.</p>
+          <p><strong>Other:</strong> Loves sci-fi.</p>
+          <a href="https://twitch.tv/brbcompiling" target="_blank" class="nes-btn twitch">Watch Live</a>
+        </div>
+        <div class="card">
+          <h3>TrevorMarksman</h3>
+          <p><strong>Age:</strong> 29</p>
+          <p><strong>Background:</strong> Ex-military gamer.</p>
+          <p><strong>Marital Status:</strong> Single</p>
+          <p><strong>Wives:</strong> 0</p>
+          <p><strong>Story:</strong> Brings tactical skills to streams.</p>
+          <p><strong>Other:</strong> Trains dogs.</p>
+          <a href="https://twitch.tv/TrevorMarksman" target="_blank" class="nes-btn twitch">Watch Live</a>
+        </div>
+        <div class="card">
+          <h3>ValentineCoolio</h3>
+          <p><strong>Age:</strong> 24</p>
+          <p><strong>Background:</strong> Dance instructor turned streamer.</p>
+          <p><strong>Marital Status:</strong> Single</p>
+          <p><strong>Wives:</strong> 0</p>
+          <p><strong>Story:</strong> Adds dance to gaming.</p>
+          <p><strong>Other:</strong> Fitness buff.</p>
+          <a href="https://twitch.tv/ValentineCoolio" target="_blank" class="nes-btn twitch">Watch Live</a>
+        </div>
+        <div class="card">
+          <h3>LegacyMartian</h3>
+          <p><strong>Age:</strong> 35</p>
+          <p><strong>Background:</strong> Veteran gamer since the 90s.</p>
+          <p><strong>Marital Status:</strong> Married</p>
+          <p><strong>Wives:</strong> 1</p>
+          <p><strong>Story:</strong> Shares decades of gaming wisdom.</p>
+          <p><strong>Other:</strong> Collects retro consoles.</p>
+          <a href="https://twitch.tv/LegacyMartian" target="_blank" class="nes-btn twitch">Watch Live</a>
+        </div>
+        <div class="card">
+          <h3>MovieByMacaffe</h3>
+          <p><strong>Age:</strong> 31</p>
+          <p><strong>Background:</strong> Film critic turned streamer.</p>
+          <p><strong>Marital Status:</strong> Single</p>
+          <p><strong>Wives:</strong> 0</p>
+          <p><strong>Story:</strong> Reviews movies live.</p>
+          <p><strong>Other:</strong> Film buff.</p>
+          <a href="https://twitch.tv/MovieByMacaffe" target="_blank" class="nes-btn twitch">Watch Live</a>
+        </div>
+        <div class="card">
+          <h3>BizaroPeter</h3>
+          <p><strong>Age:</strong> 26</p>
+          <p><strong>Background:</strong> Circus performer turned streamer.</p>
+          <p><strong>Marital Status:</strong> Single</p>
+          <p><strong>Wives:</strong> 0</p>
+          <p><strong>Story:</strong> Brings quirky acts to Twitch.</p>
+          <p><strong>Other:</strong> Juggling pro.</p>
+          <a href="https://twitch.tv/BizaroPeter" target="_blank" class="nes-btn twitch">Watch Live</a>
+        </div>
+        <div class="card">
+          <h3>GynaWENS</h3>
+          <p><strong>Age:</strong> 23</p>
+          <p><strong>Background:</strong> College student and gamer.</p>
+          <p><strong>Marital Status:</strong> Single</p>
+          <p><strong>Wives:</strong> 0</p>
+          <p><strong>Story:</strong> Streams to fund education.</p>
+          <p><strong>Other:</strong> Loves anime.</p>
+          <a href="https://twitch.tv/GynaWENS" target="_blank" class="nes-btn twitch">Watch Live</a>
+        </div>
+        <div class="card">
+          <h3>xvbrznem</h3>
+          <p><strong>Age:</strong> 28</p>
+          <p><strong>Background:</strong> Full-time streamer from Auckland.</p>
+          <p><strong>Marital Status:</strong> Married</p>
+          <p><strong>Wives:</strong> 1</p>
+          <p><strong>Story:</strong> Streams daily to connect globally.</p>
+          <p><strong>Other:</strong> Beach lover.</p>
+          <a href="https://twitch.tv/xvbrznem" target="_blank" class="nes-btn twitch">Watch Live</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Staff Page -->
+    <div id="staff" class="page nes-container">
+      <h2>Our Team</h2>
+      <div class="staff-grid">
+        <div class="card">
+          <h3>John Doe</h3>
+          <p>Community Manager</p>
+          <a href="mailto:john.doe@ogvk.org">Contact</a>
+        </div>
+        <div class="card">
+          <h3>Jane Smith</h3>
+          <p>Sponsorship Coordinator</p>
+          <a href="mailto:jane.smith@ogvk.org">Contact</a>
+        </div>
+        <div class="card">
+          <h3>Mike Johnson</h3>
+          <p>Technical Director</p>
+          <a href="mailto:mike.johnson@ogvk.org">Contact</a>
+        </div>
+      </div>
+    </div>
+
+    <footer>© 2025 ogvk.org | All rights reserved</footer>
+  </div>
+
+  <script>
+    const tabs = ['about', 'sponsor', 'join', 'streamers', 'staff'];
+
+    function showPage(pageId) {
+      // Hide all pages and remove active class from nav buttons
+      document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
+      document.querySelectorAll('nav button').forEach(btn => btn.classList.remove('active'));
+
+      // Show the selected page and set active nav button
+      const page = document.getElementById(pageId);
+      page.classList.add('active');
+      document.getElementById(`nav-${pageId}`).classList.add('active');
+
+      // Update URL without reloading
+      const url = tabs.includes(pageId) ? `/@${encodeURIComponent(pageId)}` : '/';
+      history.pushState({ pageId }, '', url);
+    }
+
+    function loadFromPath() {
+      const path = window.location.pathname;
+      const match = path.match(/^\/@([^/]+)/);
+      if (match) {
+        const tabName = decodeURIComponent(match[1]).toLowerCase();
+        if (tabs.includes(tabName)) {
+          showPage(tabName);
+        } else {
+          showPage('about');
+        }
+      } else {
+        showPage('about');
+      }
+    }
+
+    function updateLiveStatus() {
+      const now = new Date();
+      const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
+      const nzOffset = 12 * 60; // NZST as of July (no DST)
+      const nzTime = new Date(utc + (nzOffset * 60000));
+      const hours = nzTime.getHours();
+      const isLive = hours >= 3 && hours < 7; // Assuming 3-7 AM NZST schedule
+      const liveStatus = document.getElementById('live-status');
+      liveStatus.textContent = `Current Time: ${nzTime.toLocaleTimeString('en-NZ', { timeZone: 'Pacific/Auckland', hour12: true })} ${nzTime.toLocaleDateString('en-NZ', { timeZone: 'Pacific/Auckland' })}`;
+
+      const streamers = document.querySelectorAll('.streamer-grid .card');
+      streamers.forEach(card => {
+        const twitchBtn = card.querySelector('.nes-btn.twitch');
+        const streamerName = card.querySelector('h3').textContent;
+        const startHour = 3; // Default to 3 AM for all streamers
+        if (hours >= startHour && hours < startHour + 4) {
+          twitchBtn.textContent = 'Join Live';
+          twitchBtn.classList.add('active');
+        } else {
+          twitchBtn.textContent = 'Watch VODs';
+          twitchBtn.classList.remove('active');
+        }
+      });
+    }
+
+    // Handle browser back/forward navigation
+    window.addEventListener('popstate', (event) => {
+      const { pageId } = event.state || {};
+      if (pageId && tabs.includes(pageId)) {
+        showPage(pageId);
+      } else {
+        loadFromPath();
+      }
+    });
+
+    // Initialize page
+    document.addEventListener('DOMContentLoaded', () => {
+      loadFromPath();
+      updateLiveStatus();
+      setInterval(updateLiveStatus, 60000);
+    });
+  </script>
+</body>
+</html>
