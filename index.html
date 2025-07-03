@@ -30,6 +30,7 @@
       --active-tab-text: #000000; /* Black */
       --card-bg: #3C2F2F; /* Brown */
       --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      --nav-bg: rgba(28, 37, 38, 0.9); /* Semi-transparent secondary-bg */
     }
 
     * {
@@ -44,23 +45,24 @@
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       font-weight: 400;
       margin: 0;
-      padding: 2rem;
       min-height: 100vh;
       line-height: 1.5;
+      padding-top: 5rem; /* Space for fixed nav */
     }
 
     .container {
       max-width: 1280px;
       margin: 0 auto;
       text-align: center;
+      padding: 0 1rem;
     }
 
     .nes-container {
       background: var(--secondary-bg);
       border: 1px solid #4b5563;
       border-radius: 1rem;
-      padding: 2.5rem;
-      margin-bottom: 2rem;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
       box-shadow: var(--shadow);
       transition: transform 0.3s ease;
     }
@@ -85,39 +87,50 @@
 
     h1 {
       color: var(--accent);
-      font-size: clamp(2.5rem, 5vw, 3.75rem);
+      font-size: clamp(2rem, 6vw, 3rem);
       font-weight: 700;
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
     }
 
     h2 {
       color: var(--accent);
-      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-size: clamp(1.25rem, 4vw, 1.75rem);
       font-weight: 600;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
     }
 
     nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: var(--nav-bg);
+      backdrop-filter: blur(10px);
       display: flex;
       justify-content: center;
-      gap: 1.5rem;
-      margin-bottom: 2.5rem;
-      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      z-index: 1000;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
     }
 
     nav button {
       background: var(--btn-light-bg);
       border: none;
-      border-radius: 0.75rem;
-      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      padding: 0.5rem 1rem;
       color: var(--btn-light-text);
-      font-size: clamp(0.875rem, 2vw, 1rem);
+      font-size: clamp(0.75rem, 2.5vw, 0.875rem);
       font-weight: 500;
       cursor: pointer;
       transition: background 0.3s ease, box-shadow 0.3s ease;
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.25rem;
+      white-space: nowrap;
     }
 
     nav button.active {
@@ -132,14 +145,14 @@
 
     .streamer-grid, .staff-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      margin-top: 1.5rem;
     }
 
     .card {
       background: var(--card-bg);
-      padding: 1.5rem;
+      padding: 1rem;
       border-radius: 0.75rem;
       text-align: left;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -153,15 +166,15 @@
 
     .card h3 {
       color: var(--accent);
-      font-size: 1.25rem;
+      font-size: 1.125rem;
       font-weight: 600;
-      margin-bottom: 1rem;
+      margin-bottom: 0.75rem;
     }
 
     .card p {
-      font-size: 0.875rem;
+      font-size: 0.8125rem;
       color: #d1d5db;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.5rem;
     }
 
     .card p strong {
@@ -172,12 +185,12 @@
     .card a {
       color: var(--btn-light-text);
       text-decoration: none;
-      padding: 0.75rem 1.25rem;
+      padding: 0.5rem 1rem;
       background: var(--btn-light-bg);
       border-radius: 0.5rem;
       display: inline-block;
-      margin-top: 1rem;
-      font-size: 0.875rem;
+      margin-top: 0.75rem;
+      font-size: 0.8125rem;
       font-weight: 500;
       transition: background 0.3s ease;
     }
@@ -187,34 +200,39 @@
     }
 
     .live-status {
-      margin: 1.5rem 0;
-      font-size: 0.875rem;
+      margin: 1rem 0;
+      font-size: 0.8125rem;
       color: #d1d5db;
     }
 
     .form-container {
-      padding: 1.5rem;
+      padding: 1rem;
       background: var(--card-bg);
       border-radius: 0.75rem;
-      margin: 1.5rem 0;
+      margin: 1rem 0;
+    }
+
+    .form-container iframe {
+      width: 100%;
+      height: 400px;
     }
 
     .about-text {
-      line-height: 1.75;
+      line-height: 1.6;
       text-align: justify;
-      max-width: 900px;
+      max-width: 100%;
       margin: 0 auto;
-      font-size: 1rem;
+      font-size: 0.875rem;
       color: #d1d5db;
     }
 
     .nes-btn {
       background: var(--btn-light-bg);
       border: none;
-      border-radius: 0.75rem;
+      border-radius: 0.5rem;
       color: var(--btn-light-text);
-      padding: 0.75rem 1.5rem;
-      font-size: 0.875rem;
+      padding: 0.5rem 1rem;
+      font-size: 0.8125rem;
       font-weight: 500;
       cursor: pointer;
       transition: background 0.3s ease, box-shadow 0.3s ease;
@@ -238,26 +256,45 @@
 
     footer {
       text-align: center;
-      margin-top: 3rem;
+      margin-top: 2rem;
       color: #d1d5db;
-      font-size: 0.875rem;
+      font-size: 0.75rem;
+      padding-bottom: 1rem;
     }
 
-    @media (max-width: 768px) {
-      body { padding: 1.5rem; }
-      .container { padding: 1rem; }
-      .nes-container { padding: 1.5rem; }
-      .streamer-grid, .staff-grid { grid-template-columns: 1fr; }
-      nav { gap: 1rem; }
-      nav button { padding: 0.625rem 1.25rem; }
-      h1 { font-size: clamp(2rem, 4.5vw, 3rem); }
-      h2 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
+    @media (min-width: 768px) {
+      .container { padding: 0 2rem; }
+      .nes-container { padding: 2rem; }
+      .streamer-grid, .staff-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+      h1 { font-size: clamp(2.5rem, 5vw, 3.75rem); }
+      h2 { font-size: clamp(1.5rem, 3vw, 2rem); }
+      .card { padding: 1.5rem; }
+      .card h3 { font-size: 1.25rem; }
+      .card p { font-size: 0.875rem; }
+      .card a { padding: 0.75rem 1.25rem; font-size: 0.875rem; }
+      .nes-btn { padding: 0.75rem 1.5rem; font-size: 0.875rem; }
+      .form-container { padding: 1.5rem; }
+      .form-container iframe { height: 600px; }
+      .about-text { font-size: 1rem; max-width: 900px; }
+      nav button { padding: 0.75rem 1.5rem; font-size: clamp(0.875rem, 2vw, 1rem); }
     }
 
     @media (max-width: 480px) {
-      body { padding: 1rem; }
-      .nes-container { padding: 1rem; }
-      nav button { font-size: 0.875rem; }
+      body { padding-top: 4rem; }
+      .container { padding: 0 0.5rem; }
+      .nes-container { padding: 1rem; margin-bottom: 1rem; }
+      nav { gap: 0.25rem; padding: 0.25rem 0.5rem; }
+      nav button { padding: 0.4rem 0.8rem; font-size: 0.75rem; }
+      h1 { font-size: clamp(1.75rem, 5vw, 2.5rem); }
+      h2 { font-size: clamp(1rem, 3.5vw, 1.5rem); }
+      .card { padding: 0.75rem; }
+      .card h3 { font-size: 1rem; }
+      .card p { font-size: 0.75rem; }
+      .card a { padding: 0.4rem 0.8rem; font-size: 0.75rem; }
+      .nes-btn { padding: 0.4rem 0.8rem; font-size: 0.75rem; }
+      .form-container iframe { height: 350px; }
+      .about-text { font-size: 0.8125rem; }
+      .live-status { font-size: 0.75rem; }
     }
   </style>
 </head>
@@ -287,7 +324,7 @@
       <div class="form-container">
         <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf9dQwX7Z5Z6X3kY8Y2kL9m4m4m4m4m4m4m4m4m4/viewform?embedded=true" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
       </div>
-      <p class="nes-btn" style="margin-top: 1.5rem;">Contact: <a href="mailto:sponsor@ogvk.company" style="color: var(--accent);">sponsor@ogvk.company</a></p>
+      <p class="nes-btn" style="margin-top: 1rem;">Contact: <a href="mailto:sponsor@ogvk.company" style="color: var(--accent);">sponsor@ogvk.company</a></p>
     </div>
 
     <!-- Join Page -->
@@ -299,13 +336,13 @@
       <div class="form-container">
         <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf9dQwX7Z5Z6X3kY8Y2kL9m4m4m4m4m4m4m4m4m4/viewform?embedded=true" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
       </div>
-      <p class="nes-btn" style="margin-top: 1.5rem;">Contact: <a href="mailto:join@ogvk.company" style="color: var(--accent);">join@ogvk.company</a></p>
+      <p class="nes-btn" style="margin-top: 1rem;">Contact: <a href="mailto:join@ogvk.company" style="color: var(--accent);">join@ogvk.company</a></p>
     </div>
 
     <!-- Streamers Page -->
     <div id="streamers" class="page nes-container">
       <h2>Streamer Profiles</h2>
-      <div class="live-status" id="live-status">Current Time: 07:57 AM NZST, Friday, July 04, 2025</div>
+      <div class="live-status" id="live-status">Current Time: 08:16 AM NZST, Friday, July 04, 2025</div>
       <div class="streamer-grid">
         <div class="card">
           <h3>xwlasxd</h3>
@@ -469,18 +506,18 @@
     const tabs = ['about', 'sponsor', 'join', 'streamers', 'staff'];
 
     function showPage(pageId) {
-      // Hide all pages and remove active class from nav buttons
       document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
       document.querySelectorAll('nav button').forEach(btn => btn.classList.remove('active'));
 
-      // Show the selected page and set active nav button
       const page = document.getElementById(pageId);
       page.classList.add('active');
       document.getElementById(`nav-${pageId}`).classList.add('active');
 
-      // Update URL without reloading
       const url = tabs.includes(pageId) ? `/@${encodeURIComponent(pageId)}` : '/';
       history.pushState({ pageId }, '', url);
+
+      // Scroll to top of content, below fixed nav
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     function loadFromPath() {
@@ -523,7 +560,6 @@
       });
     }
 
-    // Handle browser back/forward navigation
     window.addEventListener('popstate', (event) => {
       const { pageId } = event.state || {};
       if (pageId && tabs.includes(pageId)) {
@@ -533,7 +569,6 @@
       }
     });
 
-    // Initialize page
     document.addEventListener('DOMContentLoaded', () => {
       loadFromPath();
       updateLiveStatus();
