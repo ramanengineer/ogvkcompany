@@ -15,21 +15,19 @@
   <title>ogvk.company</title>
   <link rel="icon" href="https://i.postimg.cc/zfSxRGYF/Binge-Watchers-prfile-png-1.png" type="image/png">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Futura:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary-bg: #000000; /* Black */
-      --secondary-bg: #1C2526; /* Darker shade for secondary background */
-      --accent: #FF69B4; /* Pink */
-      --text: #FFFFFF; /* White */
-      --btn-light-bg: #FFD700; /* Yellow */
-      --btn-light-text: #000000; /* Black */
-      --btn-dark-bg: #FFA500; /* Orange */
-      --btn-dark-text: #000000; /* Black */
-      --active-tab-bg: #00B7EB; /* Blue */
-      --active-tab-text: #000000; /* Black */
-      --card-bg: #3C2F2F; /* Brown */
-      --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      --primary-bg: #000000;
+      --secondary-bg: #2f334f;
+      --accent: #1e90ff;
+      --text: #ffffff;
+      --btn-light-bg: #2ecc71;
+      --btn-light-text: #f0f0f0;
+      --btn-dark-bg: #787878;
+      --btn-dark-text: #ffffff;
+      --card-bg: rgba(47, 51, 79, 0.2);
+      --shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
     }
 
     * {
@@ -39,14 +37,16 @@
     }
 
     body {
-      background: var(--primary-bg);
+      background: linear-gradient(45deg, var(--primary-bg), #000000);
       color: var(--text);
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: 'Futura', -apple-system, BlinkMacSystemFont, sans-serif;
       font-weight: 400;
       margin: 0;
-      padding: 1rem;
+      padding: 2rem;
       min-height: 100vh;
-      line-height: 1.5;
+      line-height: 1.6;
+      overflow-x: hidden;
+      transition: all 0.3s ease;
     }
 
     .container {
@@ -56,17 +56,19 @@
     }
 
     .nes-container {
-      background: var(--secondary-bg);
-      border: 1px solid #4b5563;
-      border-radius: 1rem;
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
+      background: var(--card-bg);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 1.25rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
       box-shadow: var(--shadow);
       transition: transform 0.3s ease;
     }
 
     .nes-container:hover {
-      transform: translateY(-0.25rem);
+      transform: translateY(-0.5rem);
     }
 
     .page {
@@ -75,93 +77,101 @@
 
     .page.active {
       display: block;
-      animation: fadeIn 0.5s ease;
+      animation: fadeIn 0.6s ease;
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(1rem); }
+      from { opacity: 0; transform: translateY(1.5rem); }
       to { opacity: 1; transform: translateY(0); }
     }
 
     h1 {
       color: var(--accent);
-      font-size: clamp(2rem, 5vw, 3rem);
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
       font-weight: 700;
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
+      letter-spacing: 0.02em;
     }
 
     h2 {
       color: var(--accent);
-      font-size: clamp(1.25rem, 3vw, 1.75rem);
-      font-weight: 600;
-      margin-bottom: 1rem;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.01em;
     }
 
     nav {
       display: flex;
       justify-content: center;
-      gap: 1rem;
-      margin-bottom: 1.5rem;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
       flex-wrap: wrap;
     }
 
     nav button {
-      background: var(--btn-light-bg);
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
       border: none;
-      border-radius: 0.5rem;
-      padding: 0.5rem 1rem;
+      border-radius: 0.75rem;
+      padding: 0.75rem 1.5rem;
       color: var(--btn-light-text);
-      font-size: clamp(0.75rem, 2vw, 0.875rem);
+      font-size: clamp(0.875rem, 2vw, 1rem);
       font-weight: 500;
       cursor: pointer;
-      transition: background 0.3s ease, box-shadow 0.3s ease;
+      transition: background 0.3s ease, transform 0.2s ease;
       display: flex;
       align-items: center;
-      gap: 0.25rem;
+      gap: 0.5rem;
     }
 
     nav button.active {
-      background: var(--active-tab-bg);
-      color: var(--active-tab-text);
+      background: var(--accent);
+      color: var(--btn-light-text);
     }
 
     nav button:hover {
-      background: var(--btn-dark-bg);
-      box-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
     }
 
     .streamer-grid, .staff-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1rem;
-      margin-top: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
     }
 
     .card {
       background: var(--card-bg);
-      padding: 1rem;
-      border-radius: 0.75rem;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      padding: 1.5rem;
+      border-radius: 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
       text-align: left;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
       box-shadow: var(--shadow);
     }
 
     .card:hover {
-      transform: translateY(-0.125rem);
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      transform: translateY(-0.25rem);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
     }
 
     .card h3 {
       color: var(--accent);
-      font-size: 1.125rem;
-      font-weight: 600;
-      margin-bottom: 0.75rem;
+      font-size: 1.25rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
     }
 
     .card p {
-      font-size: 0.8125rem;
-      color: #d1d5db;
-      margin-bottom: 0.5rem;
+      font-size: 0.875rem;
+      color: #d0d0d0;
+      margin-bottom: 0.75rem;
+      line-height: 1.7;
     }
 
     .card p strong {
@@ -172,100 +182,103 @@
     .card a {
       color: var(--btn-light-text);
       text-decoration: none;
-      padding: 0.5rem 1rem;
+      padding: 0.75rem 1.5rem;
       background: var(--btn-light-bg);
-      border-radius: 0.5rem;
+      border-radius: 0.75rem;
       display: inline-block;
-      margin-top: 0.75rem;
-      font-size: 0.8125rem;
+      margin-top: 1rem;
+      font-size: 0.875rem;
       font-weight: 500;
-      transition: background 0.3s ease;
+      transition: background 0.3s ease, transform 0.2s ease;
     }
 
     .card a:hover {
       background: var(--btn-dark-bg);
+      transform: translateY(-2px);
     }
 
     .live-status {
-      margin: 1rem 0;
-      font-size: 0.8125rem;
-      color: #d1d5db;
+      margin: 1.5rem 0;
+      font-size: 0.875rem;
+      color: #d0d0d0;
     }
 
     .form-container {
-      padding: 1rem;
+      padding: 1.5rem;
       background: var(--card-bg);
-      border-radius: 0.75rem;
-      margin: 1rem 0;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      margin: 1.5rem 0;
       width: 100%;
       text-align: center;
     }
 
     .about-text {
-      line-height: 1.6;
+      line-height: 1.8;
       text-align: justify;
-      max-width: 900px;
+      max-width: 1000px;
       margin: 0 auto;
-      font-size: 0.875rem;
-      color: #d1d5db;
+      font-size: 0.9375rem;
+      color: #d0d0d0;
     }
 
     .nes-btn {
       background: var(--btn-light-bg);
       border: none;
-      border-radius: 0.5rem;
+      border-radius: 0.75rem;
       color: var(--btn-light-text);
-      padding: 0.5rem 1rem;
-      font-size: 0.8125rem;
+      padding: 0.75rem 1.5rem;
+      font-size: 0.875rem;
       font-weight: 500;
       cursor: pointer;
-      transition: background 0.3s ease, box-shadow 0.3s ease;
+      transition: background 0.3s ease, transform 0.2s ease;
       display: inline-block;
     }
 
     .nes-btn:hover {
       background: var(--btn-dark-bg);
-      box-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
+      transform: translateY(-2px);
     }
 
     .nes-btn.twitch {
-      background: #9146ff;
+      background: rgba(134, 69, 255, 0.8);
       color: #fff;
     }
 
     .nes-btn.twitch:hover {
-      background: #7f3ce6;
-      box-shadow: 0 0 10px rgba(145, 70, 255, 0.7);
+      background: rgba(134, 69, 255, 1);
     }
 
     footer {
       text-align: center;
-      margin-top: 2rem;
-      color: #d1d5db;
-      font-size: 0.75rem;
+      margin-top: 3rem;
+      color: #b0b0b0;
+      font-size: 0.8125rem;
     }
 
     @media (max-width: 768px) {
-      body { padding: 1rem; }
-      .container { padding: 0.5rem; }
-      .nes-container { padding: 1rem; }
+      body { padding: 1.5rem; }
+      .container { padding: 1rem; }
+      .nes-container { padding: 1.5rem; }
       .streamer-grid, .staff-grid { grid-template-columns: 1fr; }
-      nav { gap: 0.5rem; }
-      nav button { padding: 0.4rem 0.8rem; font-size: 0.75rem; }
-      h1 { font-size: clamp(1.75rem, 4.5vw, 2.5rem); }
-      h2 { font-size: clamp(1rem, 2.5vw, 1.5rem); }
+      nav { gap: 1rem; }
+      nav button { padding: 0.6rem 1.2rem; font-size: 0.875rem; }
+      h1 { font-size: clamp(2rem, 4.5vw, 3rem); }
+      h2 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
     }
 
     @media (max-width: 480px) {
-      body { padding: 0.5rem; }
-      .nes-container { padding: 0.75rem; }
-      nav button { font-size: 0.7rem; padding: 0.3rem 0.6rem; }
-      .card { padding: 0.75rem; }
-      .card h3 { font-size: 1rem; }
-      .card p { font-size: 0.75rem; }
-      .card a { font-size: 0.75rem; }
-      .about-text { font-size: 0.8125rem; }
-      .live-status { font-size: 0.75rem; }
+      body { padding: 1rem; }
+      .nes-container { padding: 1rem; }
+      nav button { font-size: 0.8125rem; padding: 0.5rem 1rem; }
+      .card { padding: 1rem; }
+      .card h3 { font-size: 1.125rem; }
+      .card p { font-size: 0.8125rem; }
+      .card a { font-size: 0.8125rem; }
+      .about-text { font-size: 0.875rem; }
+      .live-status { font-size: 0.8125rem; }
     }
   </style>
 </head>
@@ -296,7 +309,7 @@
         <p>Yearn to amplify OGVK’s divine mission? Submit a sacred sponsorship proposal to join our celestial vision, aligning with the 22 anointed creators in their quest for 1,000,000 followers. Your support will be blessed by the Sacred Coin Toss Clause, ensuring divine harmony.</p>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSc7GEJ6i9njtN38ffkOyEzAGAT40lJwV26a3bHundUuRBlxAw/viewform" target="_blank" class="nes-btn">Open Sponsor Form</a>
       </div>
-      <p class="nes-btn" style="margin-top: 1rem;">For celestial inquiries: <a href="mailto:sponsor@ogvk.company" style="color: var(--accent);">sponsor@ogvk.company</a></p>
+      <p class="nes-btn" style="margin-top: 1.5rem;">For celestial inquiries: <a href="mailto:sponsor@ogvk.company" style="color: var(--accent);">sponsor@ogvk.company</a></p>
     </div>
 
     <!-- Join Page -->
@@ -310,13 +323,13 @@
         <p>Apply to become one of the anointed 22 by submitting the sacred form, blessed by OGVK’s eternal vision!</p>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSdHJghIOEJCenD6YTDbYzLQXeMlwYM1NU6JYKV8cFS5f_rs9w/viewform" target="_blank" class="nes-btn">Open Join Form</a>
       </div>
-      <p class="nes-btn" style="margin-top: 1rem;">Contact: <a href="mailto:join@ogvk.company" style="color: var(--accent);">join@ogvk.company</a></p>
+      <p class="nes-btn" style="margin-top: 1.5rem;">Contact: <a href="mailto:join@ogvk.company" style="color: var(--accent);">join@ogvk.company</a></p>
     </div>
 
     <!-- Streamers Page -->
     <div id="streamers" class="page nes-container">
       <h2>Sacred Creator Profiles</h2>
-      <div class="live-status" id="live-status">Current Time: 05:01 PM NZST, Friday, July 04, 2025</div>
+      <div class="live-status" id="live-status">Current Time: 05:13 PM NZST, Friday, July 04, 2025</div>
       <div class="streamer-grid">
         <div class="card">
           <h3>xwlasxd</h3>
