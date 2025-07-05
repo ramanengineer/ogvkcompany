@@ -217,7 +217,13 @@
     .nes-btn.is-primary.streamers { background: var(--features-btn); }
     .nes-btn.is-primary.staff { background: #f472b6; }
     .nes-btn.twitch { background: #9146ff; }
+    .nes-btn.youtube { background: #ff0000; }
+    .nes-btn.instagram { background: #e1306c; }
+    .nes-btn.x { background: #000000; }
     .nes-btn.twitch:hover { background: #7f3ce6; box-shadow: 0 0 10px rgba(145, 70, 255, 0.7); }
+    .nes-btn.youtube:hover { background: #cc0000; box-shadow: 0 0 10px rgba(255, 0, 0, 0.7); }
+    .nes-btn.instagram:hover { background: #c13584; box-shadow: 0 0 10px rgba(225, 48, 108, 0.7); }
+    .nes-btn.x:hover { background: #333333; box-shadow: 0 0 10px rgba(0, 0, 0, 0.7); }
 
     @keyframes buttonPress {
       0% { transform: scale(1); box-shadow: 0 8px 30px rgba(255, 255, 255, 0.3); }
@@ -262,6 +268,22 @@
     .card p {
       font-size: 1rem;
       margin: 8px 0;
+    }
+
+    .streamer-img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin: 0 auto 10px;
+      display: block;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 10px;
     }
 
     ul {
@@ -735,81 +757,173 @@
       <div class="live-status" id="live-status">Current Time: Loading...</div>
       <div class="grid">
         <div class="card" data-animate="1">
+          <img src="https://i.postimg.cc/F1k6Lykq/xwlasxd-logo.png" alt="xwlasxd" class="streamer-img">
           <h3>xwlasxd</h3>
           <p><strong>Role:</strong> Anointed Creator</p>
           <p><strong>Mission:</strong> Streams IRL variety content, embodying OGVK’s divine vision.</p>
           <p><strong>Ritual:</strong> Chants Sacred Mantra daily to invoke divine focus.</p>
-          <a href="https://twitch.tv/xwlasxd" target="_blank" class="nes-btn twitch"><i class="fab fa-twitch"></i> Twitch</a>
+          <div class="social-links">
+            <a href="https://twitch.tv/xwlasxd" target="_blank" class="nes-btn twitch"><i class="fab fa-twitch"></i></a>
+            <a href="https://youtube.com/@xwlasxd" target="_blank" class="nes-btn youtube"><i class="fab fa-youtube"></i></a>
+            <a href="https://instagram.com/xwlasxd" target="_blank" class="nes-btn instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://x.com/xwlasxd" target="_blank" class="nes-btn x"><i class="fab fa-x-twitter"></i></a>
+          </div>
         </div>
         <div class="card" data-animate="2">
+          <img src="https://i.postimg.cc/MMNrLTNd/HSL-logo.png" alt="HeavySamLifts" class="streamer-img">
           <h3>HeavySamLifts</h3>
           <p><strong>Role:</strong> Anointed Creator</p>
           <p><strong>Mission:</strong> Shares IRL variety streams, aligned with OGVK’s Brand Aura.</p>
           <p><strong>Ritual:</strong> Performs Weekly Aura Nod to sync with the collective.</p>
-          <a href="https://twitch.tv/HeavySamLifts" target="_blank" class="nes-btn twitch"><i class="fab fa-twitch"></i> Twitch</a>
+          <div class="social-links">
+            <a href="https://twitch.tv/HeavySamLifts" target="_blank" class="nes-btn twitch"><i class="fab fa-twitch"></i></a>
+            <a href="https://youtube.com/@HeavySamLifts" target="_blank" class="nes-btn youtube"><i class="fab fa-youtube"></i></a>
+            <a href="https://instagram.com/HeavySamLifts" target="_blank" class="nes-btn instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://x.com/HeavySamLifts" target="_blank" class="nes-btn x"><i class="fab fa-x-twitter"></i></a>
+          </div>
         </div>
         <div class="card" data-animate="3">
+          <img src="https://i.postimg.cc/2V4XHCw7/shady-peter-live-profile-3k.png" alt="ShadyPeterLive" class="streamer-img">
           <h3>ShadyPeterLive</h3>
           <p><strong>Role:</strong> Anointed Creator</p>
           <p><strong>Mission:</strong> Streams IRL variety content, weaving divine stories.</p>
           <p><strong>Ritual:</strong> Submits Biannual Devotion Ode to glorify OGVK.</p>
-          <a href="https://twitch.tv/ShadyPeterLive" target="_blank" class="nes-btn twitch"><i class="fab fa-twitch"></i> Twitch</a>
+          <div class="social-links">
+            <a href="https://twitch.tv/ShadyPeterLive" target="_blank" class="nes-btn twitch"><i class="fab fa-twitch"></i></a>
+            <a href="https://youtube.com/@ShadyPeterLive" target="_blank" class="nes-btn youtube"><i class="fab fa-youtube"></i></a>
+            <a href="https://instagram.com/ShadyPeterLive" target="_blank" class="nes-btn instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://x.com/ShadyPeterLive" target="_blank" class="nes-btn x"><i class="fab fa-x-twitter"></i></a>
+          </div>
         </div>
         <div class="card" data-animate="4">
+          <img src="https://i.postimg.cc/3kTz7kRq/rkg-logo.png" alt="ramkrishanghoil" class="streamer-img">
           <h3>ramkrishanghoil</h3>
           <p><strong>Role:</strong> Anointed Creator</p>
           <p><strong>Mission:</strong> Creates IRL variety streams, guided by OGVK’s vision.</p>
           <p><strong>Ritual:</strong> Sketches Sacred Emblem monthly for the Hallowed Art Vault.</p>
-          <a href="https://twitch.tv/ramkrishanghoil" target="_blank" class="nes-btn twitch"><i class="fab fa-twitch"></i> Twitch</a>
+          <div class="social-links">
+            <a href="https://twitch.tv/ramkrishanghoil" target="_blank" class="nes-btn twitch"><i class="fab fa-twitch"></i></a>
+            <a href="https://youtube.com/@ramkrishanghoil" target="_blank" class="nes-btn youtube"><i class="fab fa-youtube"></i></a>
+            <a href="https://instagram.com/ramkrishanghoil" target="_blank" class="nes-btn instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://x.com/ramkrishanghoil" target="_blank" class="nes-btn x"><i class="fab fa-x-twitter"></i></a>
+          </div>
         </div>
         <div class="card" data-animate="1">
+          <img src="https://i.postimg.cc/0QqJjT1F/zxckjsdv-profile.png" alt="zxckjsdv" class="streamer-img">
           <h3>zxckjsdv</h3>
           <p><strong>Role:</strong> Anointed Creator</p>
           <p><strong>Mission:</strong> Streams IRL variety content, radiating OGVK’s light.</p>
           <p><strong>Ritual:</strong> Performs Sacred Gaze pre-stream to absorb enlightenment.</p>
-          <a href="https://twitch.tv/zxckjsdv" target="_blank" class="nes-btn twitch"><i class="fab fa-twitch"></i> Twitch</a>
+          <div class="social-links">
+            <a href="https://twitch.tv/zxckjsdv" target="_blank" class="nes-btn twitch"><i class="fab fa-twitch"></i></a>
+            <a href="https://youtube.com/@zxckjsdv" target="_blank" class="nes-btn youtube"><i class="fab fa-youtube"></i></a>
+            <a href="https://instagram.com/zxckjsdv" target="_blank" class="nes-btn instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://x.com/zxckjsdv" target="_blank" class="nes-btn x"><i class="fab fa-x-twitter"></i></a>
+          </div>
         </div>
         <div class="card" data-animate="2">
+          <img src="https://i.postimg.cc/DzdMLGNS/brbcompiling-logo.png" alt="brbcompiling" class="streamer-img">
           <h3>brbcompiling</h3>
           <p><strong>Role:</strong> Anointed Creator</p>
           <p><strong>Mission:</strong> Shares IRL variety streams, blessed by OGVK’s mission.</p>
           <p><strong>Ritual:</strong> Lights Hallowed Flame monthly to kindle unity.</p>
-          <a href="https://twitch.tv/brbcompiling" target="_blank" class="nes-btn twitch"><i class="fab fa-twitch"></i> Twitch</a>
+          <div class="social-links">
+            <a href="https://twitch.tv/brbcompiling" target="_blank" class="nes-btn twitch"><i class="fab fa-twitch"></i></a>
+            <a href="https://youtube.com/@brbcompiling" target="_blank" class="nes-btn youtube"><i class="fab fa-youtube"></i></a>
+            <a href="https://instagram.com/brbcompiling" target="_blank" class="nes-btn instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://x.com/brbcompiling" target="_blank" class="nes-btn x"><i class="fab fa-x-twitter"></i></a>
+          </div>
         </div>
         <div class="card" data-animate="3">
+          <img src="https://i.postimg.cc/ZRpYD5yd/random-easy-logo.png" alt="TrevorMarksman" class="streamer-img">
           <h3>TrevorMarksman</h3>
           <p><strong>Role:</strong> Anointed Creator</p>
           <p><strong>Mission:</strong> Streams IRL variety content, honoring OGVK’s sanctity.</p>
           <p><strong>Ritual:</strong> Rings Sacred Bell monthly to call the spirits.</p>
-          <a href="https://twitch.tv/TrevorMarksman" target="_blank" class="nes-btn twitch"><i class="fab fa-twitch"></i> Twitch</a>
+          <div class="social-links">
+            <a href="https://twitch.tv/TrevorMarksman" target="_blank" class="nes-btn twitch"><i class="fab fa-twitch"></i></a>
+            <a href="https://youtube.com/@TrevorMarksman" target="_blank" class="nes-btn youtube"><i class="fab fa-youtube"></i></a>
+            <a href="https://instagram.com/TrevorMarksman" target="_blank" class="nes-btn instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://x.com/TrevorMarksman" target="_blank" class="nes-btn x"><i class="fab fa-x-twitter"></i></a>
+          </div>
         </div>
         <div class="card" data-animate="4">
+          <img src="https://i.postimg.cc/P57tXwWD/coolio-kick.png" alt="ValentineCoolio" class="streamer-img">
           <h3>ValentineCoolio</h3>
           <p><strong>Role:</strong> Anointed Creator</p>
           <p><strong>Mission:</strong> Creates IRL variety streams, aligned with OGVK’s vision.</p>
           <p><strong>Ritual:</strong> Submits Biannual Enlightenment Sonnet to share wisdom.</p>
-          <a href="https://twitch.tv/ValentineCoolio" target="_blank" class="nes-btn twitch"><i class="fab fa-twitch"></i> Twitch</a>
+          <div class="social-links">
+            <a href="https://twitch.tv/ValentineCoolio" target="_blank" class="nes-btn twitch"><i class="fab fa-twitch"></i></a>
+            <a href="https://youtube.com/@ValentineCoolio" target="_blank" class="nes-btn youtube"><i class="fab fa-youtube"></i></a>
+            <a href="https://instagram.com/ValentineCoolio" target="_blank" class="nes-btn instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://x.com/ValentineCoolio" target="_blank" class="nes-btn x"><i class="fab fa-x-twitter"></i></a>
+          </div>
         </div>
         <div class="card" data-animate="1">
+          <img src="https://i.postimg.cc/PLfcp01z/legacy-martian-logo.png" alt="LegacyMartian" class="streamer-img">
           <h3>LegacyMartian</h3>
           <p><strong>Role:</strong> Anointed Creator</p>
           <p><strong>Mission:</strong> Streams IRL variety content, weaving divine narratives.</p>
           <p><strong>Ritual:</strong> Displays Hallowed Relic weekly to amplify aura.</p>
-          <a href="https://twitch.tv/LegacyMartian" target="_blank" class="nes-btn twitch"><i class="fab fa-twitch"></i> Twitch</a>
+          <div class="social-links">
+            <a href="https://twitch.tv/LegacyMartian" target="_blank" class="nes-btn twitch"><i class="fab fa-twitch"></i></a>
+            <a href="https://youtube.com/@LegacyMartian" target="_blank" class="nes-btn youtube"><i class="fab fa-youtube"></i></a>
+            <a href="https://instagram.com/LegacyMartian" target="_blank" class="nes-btn instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://x.com/LegacyMartian" target="_blank" class="nes-btn x"><i class="fab fa-x-twitter"></i></a>
+          </div>
         </div>
         <div class="card" data-animate="2">
+          <img src="https://i.postimg.cc/hjLg1ZH8/macaffe-best-logo.png" alt="MovieByMacaffe" class="streamer-img">
           <h3>MovieByMacaffe</h3>
           <p><strong>Role:</strong> Anointed Creator</p>
           <p><strong>Mission:</strong> Shares IRL variety streams, guided by OGVK’s light.</p>
           <p><strong>Ritual:</strong> Performs Sacred Synergy Dance monthly to sync energies.</p>
-          <a href="https://twitch.tv/MovieByMacaffe" target="_blank" class="nes-btn twitch"><i class="fab fa-twitch"></i> Twitch</a>
+          <div class="social-links">
+            <a href="https://twitch.tv/MovieByMacaffe" target="_blank" class="nes-btn twitch"><i class="fab fa-twitch"></i></a>
+            <a href="https://youtube.com/@MovieByMacaffe" target="_blank" class="nes-btn youtube"><i class="fab fa-youtube"></i></a>
+            <a href="https://instagram.com/MovieByMacaffe" target="_blank" class="nes-btn instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://x.com/MovieByMacaffe" target="_blank" class="nes-btn x"><i class="fab fa-x-twitter"></i></a>
+          </div>
         </div>
         <div class="card" data-animate="3">
+          <img src="https://i.postimg.cc/HcVh35Zr/xvbrznem-logo.jpg" alt="xvbrznem" class="streamer-img">
           <h3>xvbrznem</h3>
           <p><strong>Role:</strong> Anointed Creator</p>
           <p><strong>Mission:</strong> Streams IRL variety content, connecting globally.</p>
           <p><strong>Ritual:</strong> Whistles Sacred Tune monthly to harmonize the soul.</p>
-          <a href="https://twitch.tv/xvbrznem" target="_blank" class="nes-btn twitch"><i class="fab fa-twitch"></i> Twitch</a>
+          <div class="social-links">
+            <a href="https://twitch.tv/xvbrznem" target="_blank" class="nes-btn twitch"><i class="fab fa-twitch"></i></a>
+            <a href="https://youtube.com/@xvbrznem" target="_blank" class="nes-btn youtube"><i class="fab fa-youtube"></i></a>
+            <a href="https://instagram.com/xvbrznem" target="_blank" class="nes-btn instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://x.com/xvbrznem" target="_blank" class="nes-btn x"><i class="fab fa-x-twitter"></i></a>
+          </div>
+        </div>
+        <div class="card" data-animate="4">
+          <img src="https://i.postimg.cc/9XsKQYKC/bizaropeter-profile.png" alt="BizaroPeter" class="streamer-img">
+          <h3>BizaroPeter</h3>
+          <p><strong>Role:</strong> Anointed Creator</p>
+          <p><strong>Mission:</strong> Streams IRL variety content, embracing OGVK’s divine vision.</p>
+          <p><strong>Ritual:</strong> Performs Sacred Chant weekly to inspire the community.</p>
+          <div class="social-links">
+            <a href="https://twitch.tv/BizaroPeter" target="_blank" class="nes-btn twitch"><i class="fab fa-twitch"></i></a>
+            <a href="https://youtube.com/@BizaroPeter" target="_blank" class="nes-btn youtube"><i class="fab fa-youtube"></i></a>
+            <a href="https://instagram.com/BizaroPeter" target="_blank" class="nes-btn instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://x.com/BizaroPeter" target="_blank" class="nes-btn x"><i class="fab fa-x-twitter"></i></a>
+          </div>
+        </div>
+        <div class="card" data-animate="1">
+          <img src="https://i.postimg.cc/k5jh3QWr/wens-logo.png" alt="WENSSOY" class="streamer-img">
+          <h3>WENSSOY</h3>
+          <p><strong>Role:</strong> Anointed Creator</p>
+          <p><strong>Mission:</strong> Streams IRL variety content, radiating OGVK’s light.</p>
+          <p><strong>Ritual:</strong> Creates Sacred Symbol monthly to honor the collective.</p>
+          <div class="social-links">
+            <a href="https://twitch.tv/WENSSOY" target="_blank" class="nes-btn twitch"><i class="fab fa-twitch"></i></a>
+            <a href="https://youtube.com/@WENSSOY" target="_blank" class="nes-btn youtube"><i class="fab fa-youtube"></i></a>
+            <a href="https://instagram.com/WENSSOY" target="_blank" class="nes-btn instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://x.com/WENSSOY" target="_blank" class="nes-btn x"><i class="fab fa-x-twitter"></i></a>
+          </div>
         </div>
       </div>
     </div>
@@ -913,10 +1027,10 @@
         const twitchBtn = card.querySelector('.nes-btn.twitch');
         const startHour = 3; // Default 3 AM NZST
         if (hours >= startHour && hours < startHour + 1) {
-          twitchBtn.textContent = 'Twitch';
+          twitchBtn.innerHTML = '<i class="fab fa-twitch"></i>';
           twitchBtn.classList.add('active');
         } else {
-          twitchBtn.textContent = 'View Blessed VODs';
+          twitchBtn.innerHTML = '<i class="fab fa-twitch"></i>';
           twitchBtn.classList.remove('active');
         }
       });
